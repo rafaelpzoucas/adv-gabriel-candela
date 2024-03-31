@@ -70,7 +70,7 @@ const config = {
         'show-text': {
           from: {
             opacity: '0',
-            transform: 'translateY(-50px)',
+            transform: 'translateY(-100px)',
           },
           to: {
             opacity: '1',
