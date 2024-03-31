@@ -10,7 +10,7 @@ export const profile: ProfileType = {
   address: 'Av. Rui Barbosa, 15 - Edifício Vieira Dias, Sala Nº 20',
   role: 'Advogado',
   about:
-    'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam nobis porro repellendus quos et saepe dolorem dignissimos mollitia ea neque, libero perferendis aut corrupti ex vel? Ratione voluptas est perferendis!',
+    'Gabriel Candela, advogado especializado em Direito Penal, com vasta experiência e contribuições acadêmicas. Comprometido com ética, justiça e defesa dos direitos fundamentais dos clientes em todo o Brasil.',
   social: [
     {
       name: 'Facebook',
