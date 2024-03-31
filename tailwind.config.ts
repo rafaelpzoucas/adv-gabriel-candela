@@ -70,11 +70,21 @@ const config = {
         'show-text': {
           from: {
             opacity: '0',
-            transform: 'translateY(-100px)',
+            transform: 'translateY(-50px)',
           },
           to: {
             opacity: '1',
             transform: 'translateY(0)',
+          },
+        },
+        'hide-text': {
+          from: {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+          to: {
+            opacity: '0',
+            transform: 'translateY(50px)',
           },
         },
       },
@@ -82,6 +92,7 @@ const config = {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'show-text': 'show-text 0.2s ease-out',
+        'hide-text': 'hide-text 0.2s ease-out',
       },
     },
   },

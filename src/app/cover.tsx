@@ -28,11 +28,15 @@ export function Cover() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentHeadlineIndex((prevIndex) => (prevIndex + 1) % headlines.length)
-      setAnimate('animate-show-text transition-all duration-1000')
+      setAnimate('animate-show-text')
 
       setTimeout(() => {
         setAnimate('')
       }, 1000)
+
+      setTimeout(() => {
+        setAnimate('animate-hide-text')
+      }, 4000)
     }, 5000)
 
     return () => clearInterval(interval)
@@ -58,7 +62,7 @@ export function Cover() {
             id="headline"
             className={cn(
               layout.fonts.highlight.className,
-              'text-3xl md:text-6xl font-bold text-primary uppercase max-w-4xl hyphens-manual',
+              'text-3xl md:text-6xl font-bold text-primary uppercase max-w-4xl hyphens-manual transition-all duration-1000',
               animate,
             )}
           >
