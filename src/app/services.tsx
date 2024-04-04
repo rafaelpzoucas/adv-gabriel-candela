@@ -117,7 +117,7 @@ export function Services() {
                   className="object-cover"
                 />
               </div>
-              <p className="text-lg md:text-3xl font-bold text-primary">
+              <p className="text-lg md:text-3xl font-bold text-primary capitalize">
                 {service.title}
               </p>
             </Link>
