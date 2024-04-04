@@ -19,7 +19,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
             src={article.cover_img}
             alt={article.title}
             fill
-            className="object-cover opacity-30"
+            className="object-cover opacity-30 grayscale"
           />
         </div>
 

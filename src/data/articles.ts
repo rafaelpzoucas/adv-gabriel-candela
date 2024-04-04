@@ -87,7 +87,7 @@ export const articles = {
     {
       id: 3,
       cover_img: freedom,
-      title: 'Desafios na Implementação das Saídas Temporárias',
+      title: 'Desafios das Saídas Temporárias',
       subtitle: 'Segurança e Ressocialização em Debate',
       summary:
         'O debate em torno das saídas temporárias de presidiários em datas comemorativas reflete a complexidade do sistema carcerário e os desafios enfrentados na busca por uma ressocialização efetiva dos detentos. Ao analisar os argumentos apresentados, é possível perceber que as saídas temporárias desempenham um papel crucial na reintegração dos presos à sociedade, ao mesmo tempo em que levantam preocupações sobre a segurança pública.',

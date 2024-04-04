@@ -2,6 +2,13 @@ import { layout } from '@/components/layout'
 import { Section } from '@/components/section'
 import { buttonVariants } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel'
 import { articles } from '@/data/articles'
 import { cn } from '@/lib/utils'
 import { ArrowRight } from 'lucide-react'
@@ -32,41 +39,52 @@ export function Articles() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 max-w-7xl">
-          {articles.data.map((article) => (
-            <Card
-              key={article.id}
-              className="flex flex-col gap-2 sm:gap-4 overflow-hidden bg-white text-primary-foreground border-foreground"
-            >
-              <div className="relative w-full h-[200px]">
-                <Image
-                  src={article.cover_img}
-                  alt={article.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="flex flex-col gap-4 p-4 pt-0">
-                <strong>{article.title}</strong>
-                <p className="text-sm text-muted line-clamp-3">
-                  {article.summary}
-                </p>
+        <Carousel>
+          <CarouselContent>
+            {articles.data.map((article) => (
+              <CarouselItem className="basis-1/3" key={article.id}>
+                <Card className="flex flex-col gap-2 sm:gap-4 overflow-hidden bg-white text-primary-foreground border-foreground">
+                  <div className="relative w-full h-[200px]">
+                    <Image
+                      src={article.cover_img}
+                      alt={article.title}
+                      fill
+                      className="object-cover grayscale"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-4 p-4 pt-0">
+                    <strong>{article.title}</strong>
+                    <p className="text-sm text-muted line-clamp-3">
+                      {article.summary}
+                    </p>
 
-                <div className="flex justify-end w-full">
-                  <Link
-                    href={`/articles/${article.id}`}
-                    className={cn(
-                      buttonVariants({ variant: 'link' }),
-                      'flex flex-row gap-2 items-center text-primary',
-                    )}
-                  >
-                    Ler artigo completo <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
-            </Card>
-          ))}
-        </div>
+                    <div className="flex justify-end w-full">
+                      <Link
+                        href={`/artigos/${article.id}`}
+                        className={cn(
+                          buttonVariants({ variant: 'link' }),
+                          'flex flex-row gap-2 items-center text-primary',
+                        )}
+                      >
+                        Ler artigo completo <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </div>
+                  </div>
+                </Card>
+              </CarouselItem>
+            ))}
+            <CarouselItem className="basis-1/3">
+              <Link href="/artigos">
+                <Card className="flex flex-col items-center justify-center text-2xl font-bold gap-2 sm:gap-4 overflow-hidden bg-accent/20 text-primary-foreground border-foreground h-[calc(100%_-_24px)]">
+                  Ver todos os artigos
+                </Card>
+              </Link>
+            </CarouselItem>
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 max-w-7xl"></div>
       </div>
     </Section>
   )
