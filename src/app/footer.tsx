@@ -10,7 +10,7 @@ import logo from '../../public/logo.svg'
 
 export function Footer() {
   return (
-    <Section className="flex items-center justify-center">
+    <Section id="footer" className="flex items-center justify-center">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl w-full">
         {footer.about && (
           <div className="flex flex-col gap-6">

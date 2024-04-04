@@ -8,7 +8,10 @@ import Image from 'next/image'
 import violenceIcon from '../../public/icons/10.svg'
 import criminalIcon from '../../public/icons/11.svg'
 import sentenceIcon from '../../public/icons/12.svg'
-import freedomIcon from '../../public/icons/13.svg'
+import questionIcon from '../../public/icons/13.svg'
+import homicideIcon from '../../public/icons/16.svg'
+import trafficIcon from '../../public/icons/17.svg'
+import publicIcon from '../../public/icons/18.svg'
 import drugsIcon from '../../public/icons/5.svg'
 import sexualIcon from '../../public/icons/6.svg'
 import fraudeIcon from '../../public/icons/7.svg'
@@ -46,15 +49,27 @@ const services: ServiceType[] = [
     title: 'Violência doméstica',
   },
   {
-    icon: criminalIcon,
-    title: 'Defesa Criminal',
-  },
-  {
     icon: sentenceIcon,
     title: 'Execução da pena',
   },
   {
-    icon: freedomIcon,
+    icon: homicideIcon,
+    title: 'Homicídio',
+  },
+  {
+    icon: trafficIcon,
+    title: 'Crime de trânsito',
+  },
+  {
+    icon: publicIcon,
+    title: 'Contra administração pública',
+  },
+  {
+    icon: criminalIcon,
+    title: 'Defesa Criminal',
+  },
+  {
+    icon: questionIcon,
     title: 'Outro',
   },
 ]
@@ -74,7 +89,7 @@ export function Services() {
       className="flex flex-col items-center justify-center gap-16 md:gap-32"
     >
       <div className="relative flex flex-col gap-16 md:gap-32 max-w-7xl">
-        <div className="w-2/3 max-w-sm h-8 md:h-12 bg-primary"></div>
+        <div className="w-2/3 max-w-sm h-6 md:h-8 bg-primary"></div>
 
         <h1
           className={cn(
@@ -88,7 +103,7 @@ export function Services() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-16 w-full ">
           {services.map((service, index) => (
             <Link
-              href={`https://wa.me/${
+              href={`https://wa.me/55${
                 profile.phone
               }?text=${generateWhatsAppMessage(service)}`}
               key={index}

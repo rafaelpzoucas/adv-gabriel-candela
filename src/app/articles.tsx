@@ -16,7 +16,7 @@ export function Articles() {
     >
       <div className="relative flex flex-col gap-16 md:gap-32 max-w-7xl">
         <div className="relative flex flex-col gap-16 md:gap-32">
-          <div className="w-2/3 max-w-sm h-8 md:h-12 bg-primary"></div>
+          <div className="w-2/3 max-w-sm h-6 md:h-8 bg-primary"></div>
 
           <div className="flex flex-row items-center gap-4">
             <h1
@@ -33,7 +33,7 @@ export function Articles() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 max-w-7xl">
-          {articles.data.slice(0, 3).map((article) => (
+          {articles.data.map((article) => (
             <Card
               key={article.id}
               className="flex flex-col gap-2 sm:gap-4 overflow-hidden bg-white text-primary-foreground border-foreground"
@@ -48,7 +48,9 @@ export function Articles() {
               </div>
               <div className="flex flex-col gap-4 p-4 pt-0">
                 <strong>{article.title}</strong>
-                <p className="text-sm text-muted">{article.summary}</p>
+                <p className="text-sm text-muted line-clamp-3">
+                  {article.summary}
+                </p>
 
                 <div className="flex justify-end w-full">
                   <Link

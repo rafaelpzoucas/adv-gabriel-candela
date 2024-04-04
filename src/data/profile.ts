@@ -5,7 +5,7 @@ import logoImg from '../../public/logo.svg'
 export const profile: ProfileType = {
   logo: logoImg,
   name: 'Gabriel Candela',
-  phone: '5518997731225',
+  phone: '18998245031',
   email: 'gabrielcandela.adv@gmail.com',
   address: 'Av. Rui Barbosa, 15 - Edifício Vieira Dias, Sala Nº 20',
   role: 'Advogado',

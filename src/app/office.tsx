@@ -29,7 +29,7 @@ export function Office() {
     >
       <div className="relative flex flex-col gap-16 md:gap-32 w-full max-w-7xl">
         <div className="relative flex flex-col gap-16 md:gap-32">
-          <div className="w-2/3 max-w-sm h-8 md:h-12 bg-primary"></div>
+          <div className="w-2/3 max-w-sm h-6 md:h-8 bg-primary"></div>
 
           <div className="flex flex-row items-center gap-4">
             <h1

@@ -16,13 +16,7 @@ export const layout = {
   },
   header: false,
   cover: true,
-  metrics: false,
-  features: false,
-  cta: false,
-  benefits: false,
   articles: true,
-  social_proof: false,
-  faq: false,
   footer: true,
   copyright: true,
 }
