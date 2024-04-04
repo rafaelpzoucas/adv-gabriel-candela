@@ -40,7 +40,7 @@ export function Articles() {
         </div>
 
         <Carousel>
-          <CarouselContent>
+          <CarouselContent className="p-1">
             {articles.data.map((article) => (
               <CarouselItem className="basis-1/3" key={article.id}>
                 <Card className="flex flex-col gap-2 sm:gap-4 overflow-hidden bg-white text-primary-foreground border-foreground">
@@ -75,7 +75,7 @@ export function Articles() {
             ))}
             <CarouselItem className="basis-1/3">
               <Link href="/artigos">
-                <Card className="flex flex-col items-center justify-center text-2xl font-bold gap-2 sm:gap-4 overflow-hidden bg-accent/20 text-primary-foreground border-foreground h-[calc(100%_-_24px)]">
+                <Card className="flex flex-col items-center justify-center text-2xl font-bold gap-2 sm:gap-4 overflow-hidden bg-accent/20 text-primary-foreground border-foreground h-[calc(100%)]">
                   Ver todos os artigos
                 </Card>
               </Link>
