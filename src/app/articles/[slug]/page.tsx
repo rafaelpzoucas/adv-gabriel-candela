@@ -36,8 +36,8 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         </div>
       </header>
 
-      <div className="flex flex-col items-center gap-8 w-full p-8 md:p-16 z-10 bg-background">
-        <article className="flex flex-col items-center gap-8 w-full p-8 md:p-16 z-10 bg-background">
+      <div className="flex flex-col items-center gap-8 w-full p-4 md:p-16 z-10 bg-background">
+        <article className="flex flex-col items-center gap-8 w-full p-4 md:p-16 z-10 bg-background">
           {article.paragraphs.map((paragraph) => (
             <p
               className="text-muted-foreground text-lg md:text-xl max-w-4xl"
@@ -48,17 +48,17 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           ))}
         </article>
 
-        <footer>
+        <footer className="flex flex-col items-center gap-8 w-full p-4 md:p-16 z-10 bg-background">
           <h3 className="font-bold text-xl">Referências</h3>
 
-          <div className="max-w-4xl">
+          <div className="max-w-[320px] md:max-w-4xl">
             {article.references.map((ref, index) => (
               <Link
                 href={ref}
                 key={ref}
                 className={cn(buttonVariants({ variant: 'link' }), 'px-0')}
               >
-                <p className="truncate w-[896px]">
+                <p className="truncate w-[320px] md:w-[896px]">
                   [{index + 1}] {ref}
                 </p>
               </Link>
