@@ -1,8 +1,10 @@
 import { Header } from '@/app/header'
 import { layout } from '@/components/layout'
+import { buttonVariants } from '@/components/ui/button'
 import { articles } from '@/data/articles'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function ArticlePage({ params }: { params: { slug: string } }) {
   const article = articles.data.filter(
@@ -21,7 +23,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           />
         </div>
 
-        <div className="flex items-end w-full max-w-5xl h-[400px] z-10 p-8 md:p-16">
+        <div className="flex flex-col items-start justify-end w-full max-w-5xl h-[400px] z-10 p-8 md:p-16">
           <h1
             className={cn(
               layout.fonts.highlight.className,
@@ -30,14 +32,40 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           >
             {article.title}
           </h1>
+          <p className="text-lg">{article.subtitle}</p>
         </div>
       </header>
 
-      <article className="flex flex-col gap-8 w-full max-w-5xl p-8 md:p-16 z-50 bg-background">
-        <p className="text-muted-foreground text-lg md:text-xl">
-          {article.body}
-        </p>
-      </article>
+      <div className="flex flex-col items-center gap-8 w-full p-8 md:p-16 z-10 bg-background">
+        <article className="flex flex-col items-center gap-8 w-full p-8 md:p-16 z-10 bg-background">
+          {article.paragraphs.map((paragraph) => (
+            <p
+              className="text-muted-foreground text-lg md:text-xl max-w-4xl"
+              key={paragraph}
+            >
+              {paragraph}
+            </p>
+          ))}
+        </article>
+
+        <footer>
+          <h3 className="font-bold text-xl">Referências</h3>
+
+          <div className="max-w-4xl">
+            {article.references.map((ref, index) => (
+              <Link
+                href={ref}
+                key={ref}
+                className={cn(buttonVariants({ variant: 'link' }), 'px-0')}
+              >
+                <p className="truncate w-[896px]">
+                  [{index + 1}] {ref}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </footer>
+      </div>
     </main>
   )
 }
