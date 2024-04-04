@@ -38,14 +38,9 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
       <div className="flex flex-col items-center gap-8 w-full p-4 md:p-16 z-10 bg-background">
         <article className="flex flex-col items-center gap-8 w-full p-4 md:p-16 z-10 bg-background">
-          {article.paragraphs.map((paragraph) => (
-            <p
-              className="text-muted-foreground text-lg md:text-xl max-w-4xl"
-              key={paragraph}
-            >
-              {paragraph}
-            </p>
-          ))}
+          <p className="text-muted-foreground text-lg md:text-xl max-w-4xl whitespace-pre-line ">
+            {article.body}
+          </p>
         </article>
 
         <footer className="flex flex-col items-center gap-8 w-full p-4 md:p-16 z-10 bg-background">
