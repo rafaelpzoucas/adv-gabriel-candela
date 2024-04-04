@@ -1,6 +1,19 @@
+'use client'
+
 import { profile } from '@/data/profile'
 import Image from 'next/image'
 import Link from 'next/link'
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+  navigationMenuTriggerStyle,
+} from '@/components/ui/navigation-menu'
 
 export function Header() {
   return (
@@ -15,6 +28,18 @@ export function Header() {
           />
         </Link>
       </div>
+
+      <NavigationMenu>
+        <NavigationMenuList>
+          <NavigationMenuItem>
+            <Link href="/" legacyBehavior passHref>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                Início
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </NavigationMenu>
     </header>
   )
 }
