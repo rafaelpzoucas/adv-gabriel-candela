@@ -43,7 +43,7 @@ export function Articles() {
           <CarouselContent className="p-1 w-[calc(100vw_-_48px)] xl:w-auto">
             {articles.data.map((article) => (
               <CarouselItem className="basis-4/5 md:basis-1/3" key={article.id}>
-                <Card className="flex flex-col gap-2 sm:gap-4 overflow-hidden bg-white text-primary-foreground border-foreground">
+                <Card className="relative flex flex-col gap-2 sm:gap-4 overflow-hidden bg-white text-primary-foreground border-foreground min-h-[402px]">
                   <div className="relative w-full h-[200px]">
                     <Image
                       src={article.cover_img}
@@ -58,7 +58,7 @@ export function Articles() {
                       {article.summary}
                     </p>
 
-                    <div className="flex justify-end w-full">
+                    <div className="absolute bottom-4 right-4 flex justify-end w-full">
                       <Link
                         href={`/artigos/${article.id}`}
                         className={cn(

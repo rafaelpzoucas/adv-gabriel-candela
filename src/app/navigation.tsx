@@ -8,8 +8,8 @@ import Link from 'next/link'
 
 import Image from 'next/image'
 import articleIcon from '../../public/icons/1.svg'
-import phoneIcon from '../../public/icons/2.svg'
-import locationIcon from '../../public/icons/3.svg'
+import locationIcon from '../../public/icons/2.svg'
+import phoneIcon from '../../public/icons/3.svg'
 import socialIcon from '../../public/icons/4.svg'
 
 const links = [

@@ -1,13 +1,13 @@
-import { Section } from '@/components/section'
-import { Header } from '../header'
-import { cn } from '@/lib/utils'
 import { layout } from '@/components/layout'
-import { articles } from '@/data/articles'
+import { Section } from '@/components/section'
+import { buttonVariants } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
+import { articles } from '@/data/articles'
+import { cn } from '@/lib/utils'
+import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { buttonVariants } from '@/components/ui/button'
-import { ArrowRight } from 'lucide-react'
+import { Header } from '../header'
 
 export default function ArticlesPage() {
   return (
@@ -35,7 +35,7 @@ export default function ArticlesPage() {
             {articles.data.map((article) => (
               <Card
                 key={article.id}
-                className="flex flex-row gap-2 sm:gap-4 overflow-hidden bg-background"
+                className="flex flex-col xl:flex-row gap-2 sm:gap-4 overflow-hidden bg-background"
               >
                 <div className="relative min-w-[200px] h-[200px]">
                   <Image
