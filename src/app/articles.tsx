@@ -21,7 +21,7 @@ export function Articles() {
       id="articles"
       className="flex flex-col items-center justify-center gap-16 md:gap-32 bg-white text-primary"
     >
-      <div className="relative flex flex-col gap-16 md:gap-32 max-w-7xl">
+      <div className="relative flex flex-col gap-16 md:gap-32 max-w-7xl xl:px-20">
         <div className="relative flex flex-col gap-16 md:gap-32">
           <div className="w-2/3 max-w-sm h-6 md:h-8 bg-primary"></div>
 
@@ -40,9 +40,9 @@ export function Articles() {
         </div>
 
         <Carousel>
-          <CarouselContent className="p-1">
+          <CarouselContent className="p-1 w-[calc(100vw_-_48px)] xl:w-auto">
             {articles.data.map((article) => (
-              <CarouselItem className="basis-1/3" key={article.id}>
+              <CarouselItem className="basis-4/5 md:basis-1/3" key={article.id}>
                 <Card className="flex flex-col gap-2 sm:gap-4 overflow-hidden bg-white text-primary-foreground border-foreground">
                   <div className="relative w-full h-[200px]">
                     <Image
@@ -73,18 +73,17 @@ export function Articles() {
                 </Card>
               </CarouselItem>
             ))}
-            <CarouselItem className="basis-1/3">
+            <CarouselItem className="basis-4/5 lg:basis-1/3">
               <Link href="/artigos">
                 <Card className="flex flex-col items-center justify-center text-2xl font-bold gap-2 sm:gap-4 overflow-hidden bg-accent/20 text-primary-foreground border-foreground h-[calc(100%)]">
-                  Ver todos os artigos
+                  <span className="text-center">Ver todos os artigos</span>
                 </Card>
               </Link>
             </CarouselItem>
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="hidden xl:flex" />
+          <CarouselNext className="hidden xl:flex" />
         </Carousel>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 max-w-7xl"></div>
       </div>
     </Section>
   )
