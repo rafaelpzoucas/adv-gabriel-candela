@@ -10,8 +10,9 @@ import { profile } from '@/data/profile'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import hero from '../../public/hero-image.jpg'
+import hero from '../../public/background.jpg'
 import logo from '../../public/logo.svg'
+import heroProfile from '../../public/profile.png'
 
 export function Cover() {
   const action = cta.actions[0]
@@ -49,41 +50,47 @@ export function Cover() {
           src={hero}
           alt="background"
           fill
-          className="object-cover opacity-30"
+          className="object-cover opacity-5"
         />
       </div>
 
-      <aside className="relative z-10 w-full md:max-w-6xl h-screen flex flex-col items-start justify-center text-left gap-4 md:gap-8 p-8">
-        <Image src={logo} alt={profile.name} width={380} />
+      <div className="relative w-full md:max-w-[1400px]">
+        <aside className="relative z-10 h-screen w-full flex flex-col items-start justify-between md:justify-center text-left gap-4 md:gap-8 p-8">
+          <Image src={logo} alt={profile.name} width={380} />
 
-        <div className="flex flex-col gap-4 h-[300px]">
-          <span>{cover.subtitle}</span>
-          <h1
-            id="headline"
+          <div className="flex flex-col gap-4 h-[300px]">
+            <span>{cover.subtitle}</span>
+            <h1
+              id="headline"
+              className={cn(
+                layout.fonts.highlight.className,
+                'text-3xl md:text-6xl font-bold text-primary uppercase max-w-4xl hyphens-manual transition-all duration-1000',
+                animate,
+              )}
+            >
+              {headlines[currentHeadlineIndex]}
+            </h1>
+          </div>
+          <p className="text-muted-foreground md:text-xl md:max-w-3xl">
+            {cover.paragraph}
+          </p>
+
+          <Link
+            href={action.link}
             className={cn(
-              layout.fonts.highlight.className,
-              'text-3xl md:text-6xl font-bold text-primary uppercase max-w-4xl hyphens-manual transition-all duration-1000',
-              animate,
+              buttonVariants({ variant: 'default', size: 'lg' }),
+              'w-full md:w-fit h-14',
             )}
           >
-            {headlines[currentHeadlineIndex]}
-          </h1>
-        </div>
-        <p className="text-muted-foreground md:text-xl md:max-w-3xl">
-          {cover.paragraph}
-        </p>
+            <action.icon className="text-lg mr-2" />
+            {action.button_text}
+          </Link>
+        </aside>
 
-        <Link
-          href={action.link}
-          className={cn(
-            buttonVariants({ variant: 'default', size: 'lg' }),
-            'w-full md:w-fit h-14',
-          )}
-        >
-          <action.icon className="text-lg mr-2" />
-          {action.button_text}
-        </Link>
-      </aside>
+        <div className="absolute right-1/2 md:right-0 bottom-0 translate-x-[160px] md:translate-x-0 h-80 md:h-[calc(100vh_-_150px)] aspect-square">
+          <Image src={heroProfile} alt="" fill className="object-contain" />
+        </div>
+      </div>
     </section>
   )
 }
