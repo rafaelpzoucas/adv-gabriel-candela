@@ -87,7 +87,7 @@ export function Cover() {
           </Link>
         </aside>
 
-        <div className="absolute right-1/2 md:right-0 bottom-0 translate-x-[160px] md:translate-x-0 h-80 md:h-[calc(100vh_-_150px)] aspect-square">
+        <div className="absolute right-1/2 md:right-0 -bottom-16 md:bottom-0 translate-x-[192px] md:translate-x-0 h-96 md:h-[calc(100vh_-_150px)] aspect-square">
           <Image src={heroProfile} alt="" fill className="object-contain" />
         </div>
       </div>
