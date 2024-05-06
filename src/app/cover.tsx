@@ -54,8 +54,8 @@ export function Cover() {
         />
       </div>
 
-      <div className="relative w-full md:max-w-[1400px]">
-        <aside className="relative z-10 h-screen w-full flex flex-col items-start justify-between md:justify-center text-left gap-4 md:gap-8 p-8">
+      <div className="relative w-full md:max-w-[1400px] h-dvh">
+        <aside className="relative z-10 h-full w-full flex flex-col items-start justify-between md:justify-center text-left gap-4 md:gap-8 p-8">
           <Image src={logo} alt={profile.name} width={380} />
 
           <div className="flex flex-col gap-4 h-[300px]">
