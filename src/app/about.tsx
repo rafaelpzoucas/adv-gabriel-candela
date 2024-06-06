@@ -16,7 +16,7 @@ const paragraphs = [
   'Minha atuação estende-se por todo o território nacional, proporcionando-me uma visão abrangente e multifacetada das questões jurídicas que permeiam nossa sociedade.',
   'Como profissional, sou guiado por princípios éticos inabaláveis, comprometido com a justiça e o respeito aos direitos fundamentais de meus clientes. Minha missão é garantir que a lei seja aplicada de forma justa e equitativa, sempre buscando a melhor defesa dos interesses daqueles que represento.',
   'Agradeço a atenção disponibilizada e coloco-me à disposição para qualquer esclarecimento adicional que possa ser necessário.',
-  'Atenciosamente, Dr. Candela.',
+  'Atenciosamente, Dr. Gabriel Candela.',
 ]
 
 export function About() {

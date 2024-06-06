@@ -50,7 +50,7 @@ export function Cover() {
           src={hero}
           alt="background"
           fill
-          className="object-cover opacity-5"
+          className="object-cover opacity-[0.03]"
         />
       </div>
 
@@ -88,6 +88,7 @@ export function Cover() {
         </aside>
 
         <div className="absolute right-1/2 md:right-0 bottom-0 translate-x-[160px] md:translate-x-0 h-80 md:h-[calc(100vh_-_150px)] aspect-square">
+          <div className="w-4/5 aspect-square rounded-full bg-primary/15 blur-3xl translate-x-[50px] translate-y-[100px]"></div>
           <Image src={heroProfile} alt="" fill className="object-contain" />
         </div>
       </div>
