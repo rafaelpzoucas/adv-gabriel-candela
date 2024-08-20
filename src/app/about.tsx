@@ -37,7 +37,7 @@ export function About() {
           </h1>
         </div>
 
-        <div className="flex flex-col items-start gap-6 md:text-xl text-muted/70">
+        <div className="flex flex-col items-start gap-6 md:text-xl text-muted/70 text-justify">
           {paragraphs.slice(0, 2).map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}

@@ -31,7 +31,7 @@ const links = [
   {
     icon: socialIcon,
     title: 'Redes sociais',
-    link: '#footer',
+    link: 'https://linktr.ee/gabrielcandela?utm_source=linktree_profile_share&ltsid=31edb20b-28b2-482a-b289-80e43aace7b9',
   },
 ]
 
@@ -41,6 +41,7 @@ export function Navigation() {
       <div className="hidden relative z-10 md:grid grid-cols-2 md:grid-cols-4 gap-8 w-full max-w-7xl">
         {links.map((link, index) => (
           <Link
+            target={link.title === 'Redes sociais' ? '_blank' : '_self'}
             href={link.link}
             key={index}
             className="flex flex-col gap-4 items-center justify-center"
@@ -60,6 +61,7 @@ export function Navigation() {
           {links.map((link, index) => (
             <CarouselItem className="flex-[0_0_40%]" key={index}>
               <Link
+                target={link.title === 'Redes sociais' ? '_blank' : '_self'}
                 href={link.link}
                 className="flex flex-col gap-4 items-center justify-center w-"
               >
