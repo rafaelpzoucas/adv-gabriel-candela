@@ -1,3 +1,5 @@
+import { layout } from "@/components/layout";
+import { cn } from "@/lib/utils";
 import { CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 
@@ -8,7 +10,12 @@ export function HeroSection() {
         <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl h-full mx-auto px-4 sm:px-6 lg:pl-16 lg:border-x-2 border-amber-200/20 pt-8 sm:pt-12 lg:pt-16 lg:min-h-[85dvh]">
           <aside className="flex flex-col items-center justify-center lg:justify-between gap-8 max-w-2xl w-full h-full max-h-[700px] lg:pb-12 ">
             <div className="space-y-4 sm:space-y-6">
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              <h1
+                className={cn(
+                  layout.fonts.highlight.className,
+                  "text-3xl md:text-5xl lg:text-6xl font-bold leading-tight"
+                )}
+              >
                 Como transformar sua advocacia penal em uma{" "}
                 <span className="text-primary">carreira sólida</span> e{" "}
                 <span className="text-primary">bem-sucedida</span>.{" "}

@@ -1,4 +1,6 @@
+import { layout } from "@/components/layout";
 import { Card } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 import { CreditCard, Lock } from "lucide-react";
 
 export function CTASection() {
@@ -6,7 +8,12 @@ export function CTASection() {
     <section className="bg-gradient-to-b from-background to-amber-100/10">
       <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-16 w-full max-w-7xl p-6 py-16 mx-auto">
         <div className="flex flex-col items-center justify-center gap-16 w-full max-w-4xl text-center border-t-4 border-primary py-16">
-          <h2 className="text-5xl font-bold text-primary">
+          <h2
+            className={cn(
+              layout.fonts.highlight.className,
+              "text-5xl font-bold text-primary"
+            )}
+          >
             Transforme sua carreira agora
           </h2>
 

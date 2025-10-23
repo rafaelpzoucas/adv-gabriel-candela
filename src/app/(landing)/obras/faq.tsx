@@ -1,11 +1,13 @@
 "use client";
 
+import { layout } from "@/components/layout";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { cn } from "@/lib/utils";
 
 const questions = [
   {
@@ -35,7 +37,12 @@ export function FAQSection() {
     <section className="border-t border-amber-200/10">
       <div className="flex flex-col gap-16 w-full max-w-7xl p-6 py-16 mx-auto">
         <div className="flex flex-col gap-6 items-center">
-          <h2 className="text-primary text-center max-w-md text-5xl font-bold">
+          <h2
+            className={cn(
+              layout.fonts.highlight.className,
+              "text-primary text-center max-w-md text-5xl font-bold"
+            )}
+          >
             Ainda tem dúvidas?
           </h2>
           <p>Confira as perguntas mais frequentes</p>
@@ -48,6 +55,7 @@ export function FAQSection() {
         >
           {questions.map((question) => (
             <AccordionItem
+              key={question.question}
               value={question.question}
               className=" bg-gradient-to-r from-background to-amber-100/10 border border-amber-200/10 p-4 px-8 rounded-lg text-xl"
             >

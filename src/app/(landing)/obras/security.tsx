@@ -1,3 +1,5 @@
+import { layout } from "@/components/layout";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 export function SecuritySection() {
@@ -12,7 +14,12 @@ export function SecuritySection() {
             alt="Icone de segurança"
           />
 
-          <h2 className="text-5xl font-bold text-primary">
+          <h2
+            className={cn(
+              layout.fonts.highlight.className,
+              "text-5xl font-bold text-primary"
+            )}
+          >
             Compra 100% segura
           </h2>
 

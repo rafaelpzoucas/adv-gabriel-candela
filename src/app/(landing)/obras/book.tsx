@@ -1,3 +1,5 @@
+import { layout } from "@/components/layout";
+import { cn } from "@/lib/utils";
 import { CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 
@@ -14,11 +16,23 @@ export function BookSection() {
 
         <aside className="space-y-8">
           <div className="space-y-4">
-            <h2 className="text-primary font-bold text-5xl">O livro</h2>
+            <h2
+              className={cn(
+                layout.fonts.highlight.className,
+                "text-primary font-bold text-5xl"
+              )}
+            >
+              O livro
+            </h2>
             <div className="w-24 h-3 bg-primary"></div>
           </div>
 
-          <h3 className="text-3xl font-bold max-w-md">
+          <h3
+            className={cn(
+              layout.fonts.highlight.className,
+              "text-3xl font-bold max-w-md"
+            )}
+          >
             Domine a prática penal, do planejamento à sentença.
           </h3>
 

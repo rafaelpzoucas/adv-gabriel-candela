@@ -1,3 +1,5 @@
+import { layout } from "@/components/layout";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 export function AboutPage() {
@@ -13,7 +15,12 @@ export function AboutPage() {
 
         <aside className="text-background space-y-8 max-w-lg">
           <div className="space-y-4">
-            <h2 className="text-primary font-bold text-5xl">
+            <h2
+              className={cn(
+                layout.fonts.highlight.className,
+                "text-primary font-bold text-5xl"
+              )}
+            >
               Quem sou eu para te ensinar prática penal?
             </h2>
             <div className="w-24 h-3 bg-primary"></div>
