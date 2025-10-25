@@ -2,6 +2,7 @@ import { layout } from "@/components/layout";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { CreditCard, Lock } from "lucide-react";
+import { CTAButton } from "./cta-button";
 
 export function CTASection() {
   return (
@@ -23,9 +24,7 @@ export function CTASection() {
             construa a carreira que você merece.
           </p>
 
-          <button className="w-full sm:w-auto bg-gradient-to-r from-yellow-200 from-20% via-white via-30% to-amber-600 text-primary-foreground font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-lg text-sm sm:text-base hover:opacity-90 transition-opacity">
-            QUERO COMEÇAR AGORA
-          </button>
+          <CTAButton>QUERO COMEÇAR AGORA</CTAButton>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <Card className="p-4 flex flex-row gap-2 bg-transparent border-2 border-amber-200/20">

@@ -2,6 +2,7 @@ import { layout } from "@/components/layout";
 import { cn } from "@/lib/utils";
 import { CheckCircle2 } from "lucide-react";
 import Image from "next/image";
+import { CTAButton } from "./cta-button";
 
 export function BookSection() {
   return (
@@ -73,12 +74,8 @@ export function BookSection() {
           </div>
 
           <div className="flex flex-col md:flex-row gap-4">
-            <button className="w-full sm:w-auto bg-gradient-to-r from-yellow-200 from-20% via-white via-30% to-amber-600 text-primary-foreground font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-lg text-sm sm:text-base hover:opacity-90 transition-opacity">
-              QUERO GARANTIR MEU EXEMPLAR AGORA
-            </button>
-            <button className="w-full sm:w-auto bg-gradient-to-r from-yellow-200 from-20% via-white via-30% to-amber-600 text-primary-foreground font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-lg text-sm sm:text-base hover:opacity-90 transition-opacity">
-              PREFIRO EBOOK
-            </button>
+            <CTAButton>QUERO GARANTIR MEU EXEMPLAR AGORA</CTAButton>
+            <CTAButton>PREFIRO EBOOK</CTAButton>
           </div>
         </aside>
       </div>

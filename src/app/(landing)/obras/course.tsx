@@ -2,6 +2,7 @@ import { layout } from "@/components/layout";
 import { cn } from "@/lib/utils";
 import { CheckCircle2 } from "lucide-react";
 import Image from "next/image";
+import { CTAButton } from "./cta-button";
 
 export function CourseSection() {
   return (
@@ -75,9 +76,7 @@ export function CourseSection() {
             </span>
           </div>
 
-          <button className="w-full sm:w-auto bg-gradient-to-r from-yellow-200 from-20% via-white via-30% to-amber-600 text-primary-foreground font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-lg text-sm sm:text-base hover:opacity-90 transition-opacity">
-            QUERO TER ACESSO
-          </button>
+          <CTAButton>QUERO TER ACESSO</CTAButton>
         </aside>
       </div>
     </section>
