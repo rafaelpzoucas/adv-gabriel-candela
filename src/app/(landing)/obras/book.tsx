@@ -12,7 +12,8 @@ export function BookSection() {
           src="/(landing)/obras/book.png"
           width={500}
           height={900}
-          alt="Fotografia de Dr. Gabriel Candela"
+          alt="Fotografia do livro Manual De Prática Penal"
+          className="hidden lg:block"
         />
 
         <aside className="space-y-8">
@@ -26,6 +27,15 @@ export function BookSection() {
               O livro
             </h2>
             <div className="w-24 h-3 bg-primary"></div>
+          </div>
+
+          <div className="lg:hidden relative w-full h-96">
+            <Image
+              src="/(landing)/obras/book.png"
+              fill
+              alt="Fotografia do livro Manual De Prática Penal"
+              className=" object-cover rounded-lg"
+            />
           </div>
 
           <h3

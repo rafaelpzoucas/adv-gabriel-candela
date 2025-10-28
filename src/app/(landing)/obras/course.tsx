@@ -9,10 +9,11 @@ export function CourseSection() {
     <section className="bg-gradient-to-b from-amber-100/10 to-background">
       <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-16 w-full max-w-7xl lg:border-x-2 border-amber-200/20 p-6 py-16 mx-auto">
         <Image
-          src="/(landing)/obras/course.png"
+          src="/(landing)/obras/course.jpg"
           width={500}
           height={900}
-          alt="Fotografia de Dr. Gabriel Candela"
+          alt="Imagem ilustrativa do curso Criminal Real"
+          className="hidden lg:block rounded-lg"
         />
 
         <aside className="space-y-8">
@@ -26,6 +27,15 @@ export function CourseSection() {
               O curso
             </h2>
             <div className="w-24 h-3 bg-primary"></div>
+
+            <div className="lg:hidden relative w-full h-96">
+              <Image
+                src="/(landing)/obras/course2.jpg"
+                fill
+                alt="Imagem ilustrativa do curso Criminal Real"
+                className="object-cover rounded-lg"
+              />
+            </div>
           </div>
 
           <h3

@@ -1,5 +1,10 @@
 import { layout } from "@/components/layout";
 import { Card } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 
 const depoiments = [
@@ -36,19 +41,46 @@ export function SocialProofSection() {
           <div className="w-24 h-3 bg-primary"></div>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 max-w-5xl mx-auto">
-          {depoiments.map((benefit) => (
+        <Carousel className="md:hidden">
+          <CarouselContent>
+            {depoiments.map((depoiment) => (
+              <CarouselItem
+                key={depoiment.name}
+                className="basis-4/5 h-[467px]"
+              >
+                <Card
+                  key={depoiment.name}
+                  className="flex flex-col justify-between gap-2 p-6 bg-white text-background h-full"
+                >
+                  <div className="py-4">
+                    <p>"{depoiment.text}"</p>
+                  </div>
+
+                  <div className="flex flex-col items-start border-t pt-4">
+                    <strong className="text-lg font-bold">
+                      {depoiment.name}
+                    </strong>
+                    <span className="text-sm">{depoiment.role}</span>
+                  </div>
+                </Card>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+
+        <div className="hidden md:grid grid-cols-1 gap-6 lg:grid-cols-3 max-w-5xl mx-auto">
+          {depoiments.map((depoiment) => (
             <Card
-              key={benefit.name}
-              className="flex flex-col gap-2 p-6 bg-white text-background"
+              key={depoiment.name}
+              className="flex flex-col justify-between gap-2 p-6 bg-white text-background"
             >
-              <div className="border-b py-4 pb-8">
-                <p>"{benefit.text}"</p>
+              <div className="py-4">
+                <p>"{depoiment.text}"</p>
               </div>
 
-              <div className="flex flex-col items-start ">
-                <strong className="text-lg font-bold">{benefit.name}</strong>
-                <span className="text-sm">{benefit.role}</span>
+              <div className="flex flex-col items-start border-t pt-4">
+                <strong className="text-lg font-bold">{depoiment.name}</strong>
+                <span className="text-sm">{depoiment.role}</span>
               </div>
             </Card>
           ))}

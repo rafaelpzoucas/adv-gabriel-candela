@@ -12,23 +12,48 @@ import { cn } from "@/lib/utils";
 const questions = [
   {
     question: "Qual o prazo de produção e entrega do livro?",
-    answer: "",
+    answer:
+      "Os livros são produzidos sob demanda, isto é, apenas após a compra é iniciado o processo de produção e envio do livro. Para a produção, o prazo é de 7 dias úteis, após a aprovação do pagamento.",
   },
   {
     question: "Como é feito o envio do livro?",
-    answer: "",
+    answer: `A UICLAP possui os seguintes contratos para a entrega dos livros:
+    Correios:
+
+    Entrega Econômica (Impresso Módico)
+    PAC
+    Sedex
+    Mandaê:
+
+    Entrega econômica
+    Rápido
+    Não realizamos envios internacionais, os próprios escritores é que fazem o envio.`,
   },
   {
     question: "Como recebo o livro digital?",
-    answer: "",
+    answer:
+      "Após a compra pela Amazon, o livro digital ficará disponível automaticamente na sua conta. Você poderá acessá-lo imediatamente pelo aplicativo Kindle (disponível para celular, tablet, computador ou e-reader). Basta fazer login com a mesma conta utilizada na compra e o livro aparecerá na sua biblioteca Kindle, pronto para leitura.",
   },
   {
     question: "O curso Criminal Real oferece certificado?",
-    answer: "",
+    answer:
+      "Sim. Ao concluir todas as aulas, você poderá emitir o certificado digital de conclusão diretamente pela plataforma. Esse certificado é nominal, comprova sua participação no curso e pode ser utilizado para fins curriculares ou compartilhado em redes profissionais, como o LinkedIn.",
   },
   {
     question: "Como funciona a garantia de 7 dias?",
-    answer: "",
+    answer: `Assim que a compra for confirmada, você receberá um e-mail com o acesso ao curso Criminal Real – Preparação, Prática e Posicionamento. Lá dentro, encontrará videoaulas, o livro digital, fluxogramas de prática penal e o certificado de conclusão.
+
+      Você pode assistir e ler todo o conteúdo pelo computador, celular ou tablet, quando e onde quiser.
+
+      Também é possível acessar diretamente por esta página:
+
+      Clique em Entrar e faça login com o mesmo e-mail usado na compra.
+
+      No menu lateral, selecione Minha conta.
+
+      Depois, clique em Minhas compras.
+
+      Dentro de “Minhas compras” no site Hotmart, estarão todos os produtos disponíveis, incluindo o acesso completo ao Criminal Real.`,
   },
 ];
 

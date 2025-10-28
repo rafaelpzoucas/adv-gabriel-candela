@@ -11,6 +11,7 @@ export function AboutPage() {
           width={500}
           height={900}
           alt="Fotografia do Dr. Gabriel Candela"
+          className="hidden lg:block"
         />
 
         <aside className="text-background space-y-8 max-w-lg">
@@ -26,6 +27,14 @@ export function AboutPage() {
             <div className="w-24 h-3 bg-primary"></div>
           </div>
 
+          <div className="lg:hidden relative w-full h-96">
+            <Image
+              src="/(landing)/obras/about.png"
+              fill
+              alt="Fotografia do Dr. Gabriel Candela"
+              className="object-cover"
+            />
+          </div>
           <div className="space-y-4 text-justify text-lg">
             <p>
               Sou Gabriel Candela, advogado criminalista inscrito na Ordem dos
