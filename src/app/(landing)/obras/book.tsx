@@ -3,7 +3,6 @@ import { layout } from "@/components/layout";
 import { cn } from "@/lib/utils";
 import { CheckCircle2 } from "lucide-react";
 import Image from "next/image";
-import { CTAButton } from "./cta-button";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const features = [
@@ -130,20 +129,6 @@ export function BookSection() {
                 <span>{feature}</span>
               </span>
             ))}
-          </div>
-
-          {/* CTAs */}
-          <div
-            className={cn(
-              "flex flex-col md:flex-row gap-4",
-              "transition-all duration-700 ease-out delay-700",
-              contentVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-8"
-            )}
-          >
-            <CTAButton>QUERO GARANTIR MEU EXEMPLAR AGORA</CTAButton>
-            <CTAButton>PREFIRO EBOOK</CTAButton>
           </div>
         </aside>
       </div>

@@ -3,6 +3,7 @@ import { layout } from "@/components/layout";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { CTAButton } from "./cta-button";
 
 const modules = [
   {
@@ -49,6 +50,10 @@ export function CourseModulesSection() {
   });
 
   const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation({
+    threshold: 0.1,
+  });
+
+  const { ref: buttonRef, isVisible: buttonVisible } = useScrollAnimation({
     threshold: 0.1,
   });
 
@@ -129,6 +134,19 @@ export function CourseModulesSection() {
               </span>
             </Card>
           ))}
+        </div>
+
+        {/* CTA */}
+        <div
+          ref={buttonRef}
+          className={cn(
+            "transition-all duration-700 ease-out delay-700",
+            buttonVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-8"
+          )}
+        >
+          <CTAButton className="w-full">QUERO TER ACESSO</CTAButton>
         </div>
       </div>
     </section>

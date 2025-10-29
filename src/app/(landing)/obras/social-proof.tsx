@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { CTAButton } from "./cta-button";
 
 const depoiments = [
   {
@@ -33,6 +34,10 @@ export function SocialProofSection() {
   });
 
   const { ref: cardsRef, isVisible: cardsVisible } = useScrollAnimation({
+    threshold: 0.2,
+  });
+
+  const { ref: buttonsRef, isVisible: buttonsVisible } = useScrollAnimation({
     threshold: 0.2,
   });
 
@@ -136,6 +141,21 @@ export function SocialProofSection() {
               </div>
             </Card>
           ))}
+        </div>
+
+        {/* CTAs */}
+        <div
+          ref={buttonsRef}
+          className={cn(
+            "flex flex-col md:flex-row gap-4",
+            "transition-all duration-700 ease-out delay-700",
+            buttonsVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-8"
+          )}
+        >
+          <CTAButton>QUERO GARANTIR MEU EXEMPLAR AGORA</CTAButton>
+          <CTAButton>PREFIRO EBOOK</CTAButton>
         </div>
       </div>
     </section>
