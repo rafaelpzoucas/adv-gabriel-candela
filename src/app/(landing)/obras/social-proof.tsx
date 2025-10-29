@@ -1,3 +1,4 @@
+"use client";
 import { layout } from "@/components/layout";
 import { Card } from "@/components/ui/card";
 import {
@@ -6,6 +7,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const depoiments = [
   {
@@ -26,10 +28,28 @@ const depoiments = [
 ];
 
 export function SocialProofSection() {
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation({
+    threshold: 0.3,
+  });
+
+  const { ref: cardsRef, isVisible: cardsVisible } = useScrollAnimation({
+    threshold: 0.2,
+  });
+
   return (
     <section>
       <div className="flex flex-col gap-16 w-full max-w-7xl lg:border-x-2 border-amber-200/20 p-6 py-16 mx-auto">
-        <div className="flex flex-col gap-6 items-center">
+        {/* Header com fade + slide up */}
+        <div
+          ref={headerRef}
+          className={cn(
+            "flex flex-col gap-6 items-center",
+            "transition-all duration-700 ease-out",
+            headerVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-8"
+          )}
+        >
           <h2
             className={cn(
               layout.fonts.highlight.className,
@@ -38,24 +58,23 @@ export function SocialProofSection() {
           >
             O que dizem nossos leitores
           </h2>
-          <div className="w-24 h-3 bg-primary"></div>
+          <div
+            className={cn(
+              "w-24 h-3 bg-primary transition-all duration-500 delay-200",
+              headerVisible ? "scale-x-100" : "scale-x-0"
+            )}
+          ></div>
         </div>
 
+        {/* Carousel mobile */}
         <Carousel className="md:hidden">
           <CarouselContent>
             {depoiments.map((depoiment) => (
-              <CarouselItem
-                key={depoiment.name}
-                className="basis-4/5 h-[467px]"
-              >
-                <Card
-                  key={depoiment.name}
-                  className="flex flex-col justify-between gap-2 p-6 bg-white text-background h-full"
-                >
+              <CarouselItem key={depoiment.name} className="basis-4/5 h-full">
+                <Card className="flex flex-col justify-between gap-2 p-6 bg-white text-background h-full">
                   <div className="py-4">
                     <p>"{depoiment.text}"</p>
                   </div>
-
                   <div className="flex flex-col items-start border-t pt-4">
                     <strong className="text-lg font-bold">
                       {depoiment.name}
@@ -68,17 +87,50 @@ export function SocialProofSection() {
           </CarouselContent>
         </Carousel>
 
-        <div className="hidden md:grid grid-cols-1 gap-6 lg:grid-cols-3 max-w-5xl mx-auto">
-          {depoiments.map((depoiment) => (
+        {/* Grid desktop com stagger */}
+        <div
+          ref={cardsRef}
+          className="hidden md:grid grid-cols-1 gap-6 lg:grid-cols-3 max-w-5xl mx-auto"
+        >
+          {depoiments.map((depoiment, index) => (
             <Card
               key={depoiment.name}
-              className="flex flex-col justify-between gap-2 p-6 bg-white text-background"
+              className={cn(
+                "flex flex-col justify-between gap-2 p-6 bg-white text-background",
+                "transition-all duration-700 ease-out",
+                cardsVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-12"
+              )}
+              style={{
+                transitionDelay: cardsVisible ? `${index * 150}ms` : "0ms",
+              }}
             >
-              <div className="py-4">
+              <div
+                className={cn(
+                  "py-4 transition-all duration-500",
+                  cardsVisible ? "opacity-100" : "opacity-0"
+                )}
+                style={{
+                  transitionDelay: cardsVisible
+                    ? `${index * 150 + 200}ms`
+                    : "0ms",
+                }}
+              >
                 <p>"{depoiment.text}"</p>
               </div>
-
-              <div className="flex flex-col items-start border-t pt-4">
+              <div
+                className={cn(
+                  "flex flex-col items-start border-t pt-4",
+                  "transition-all duration-500",
+                  cardsVisible ? "opacity-100" : "opacity-0"
+                )}
+                style={{
+                  transitionDelay: cardsVisible
+                    ? `${index * 150 + 300}ms`
+                    : "0ms",
+                }}
+              >
                 <strong className="text-lg font-bold">{depoiment.name}</strong>
                 <span className="text-sm">{depoiment.role}</span>
               </div>

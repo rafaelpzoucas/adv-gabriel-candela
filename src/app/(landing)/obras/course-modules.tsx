@@ -1,6 +1,8 @@
+"use client";
 import { layout } from "@/components/layout";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const modules = [
   {
@@ -42,10 +44,28 @@ const modules = [
 ];
 
 export function CourseModulesSection() {
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation({
+    threshold: 0.3,
+  });
+
+  const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation({
+    threshold: 0.1,
+  });
+
   return (
     <section>
       <div className="flex flex-col gap-16 w-full max-w-7xl lg:border-x-2 border-amber-200/20 p-6 py-16 mx-auto">
-        <div className="flex flex-col gap-6 items-center">
+        {/* Header com fade + slide up */}
+        <div
+          ref={headerRef}
+          className={cn(
+            "flex flex-col gap-6 items-center",
+            "transition-all duration-700 ease-out",
+            headerVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-8"
+          )}
+        >
           <h2
             className={cn(
               layout.fonts.highlight.className,
@@ -54,17 +74,59 @@ export function CourseModulesSection() {
           >
             Módulos do curso
           </h2>
-          <div className="w-24 h-3 bg-primary"></div>
+          <div
+            className={cn(
+              "w-24 h-3 bg-primary transition-all duration-500 delay-200",
+              headerVisible ? "scale-x-100" : "scale-x-0"
+            )}
+          ></div>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 max-w-5xl mx-auto">
-          {modules.map((module) => (
+        {/* Grid com stagger em zig-zag */}
+        <div
+          ref={gridRef}
+          className="grid grid-cols-1 gap-6 lg:grid-cols-2 max-w-5xl mx-auto"
+        >
+          {modules.map((module, index) => (
             <Card
               key={module.title}
-              className="flex flex-col gap-2 p-6 bg-gradient-to-r from-background to-amber-100/10 "
+              className={cn(
+                "flex flex-col gap-2 p-6 bg-gradient-to-r from-background to-amber-100/10",
+                "transition-all duration-700 ease-out",
+                gridVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-12"
+              )}
+              style={{
+                transitionDelay: gridVisible ? `${index * 80}ms` : "0ms",
+              }}
             >
-              <strong className="text-primary">{module.title}</strong>
-              <span>{module.description}</span>
+              <strong
+                className={cn(
+                  "text-primary transition-all duration-500",
+                  gridVisible ? "opacity-100" : "opacity-0"
+                )}
+                style={{
+                  transitionDelay: gridVisible
+                    ? `${index * 80 + 150}ms`
+                    : "0ms",
+                }}
+              >
+                {module.title}
+              </strong>
+              <span
+                className={cn(
+                  "transition-all duration-500",
+                  gridVisible ? "opacity-100" : "opacity-0"
+                )}
+                style={{
+                  transitionDelay: gridVisible
+                    ? `${index * 80 + 250}ms`
+                    : "0ms",
+                }}
+              >
+                {module.description}
+              </span>
             </Card>
           ))}
         </div>
