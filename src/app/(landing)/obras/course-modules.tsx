@@ -140,7 +140,7 @@ export function CourseModulesSection() {
         <div
           ref={buttonRef}
           className={cn(
-            "transition-all duration-700 ease-out delay-700",
+            "transition-all duration-700 ease-out delay-700 lg:mx-auto",
             buttonVisible
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-8"

@@ -11,17 +11,17 @@ import { cn } from "@/lib/utils";
 
 const benefits = [
   {
-    title: "Resultados Concretos.",
+    title: "Resultados Concretos",
     image: "/(landing)/obras/benefit1.png",
     icon: Scale,
   },
   {
-    title: "Aprenda a captar e manter clientes.",
+    title: "Aprenda a captar e manter clientes",
     image: "/(landing)/obras/benefit2.png",
     icon: Users,
   },
   {
-    title: "Estruture uma advocacia penal rentável.",
+    title: "Estruture uma advocacia penal rentável",
     image: "/(landing)/obras/benefit3.png",
     icon: TrendingUp,
   },

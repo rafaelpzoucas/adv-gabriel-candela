@@ -9,20 +9,20 @@ export function HeroSection() {
     <section className="w-full h-screen bg-gradient-to-bl from-[#443c30] to-background">
       <div className="relative z-10 h-full">
         <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl h-full mx-auto sm:px-6 lg:pl-16 lg:border-x-2 border-amber-200/20 pt-8 sm:pt-12 lg:pt-16 lg:min-h-[85dvh]">
-          <aside className="flex flex-col justify-between lg:gap-8 max-w-2xl w-full h-full lg:max-h-[700px] lg:pb-12">
+          <aside className="flex flex-col justify-between lg:gap-8 max-w-3xl w-full h-full lg:max-h-[700px] lg:pb-12">
             {/* Título com fade + slide up automático */}
             <div className="space-y-4 sm:space-y-8 md:space-y-10 text-center lg:text-left px-6 animate-in fade-in slide-in-from-bottom-4 duration-1000">
               <h1
                 className={cn(
                   layout.fonts.highlight.className,
-                  "text-3xl sm:text-4xl lg:text-6xl leading-8"
+                  "text-3xl sm:text-4xl lg:text-5xl leading-8"
                 )}
               >
                 Como transformar sua advocacia penal em uma{" "}
                 <span className="text-primary">carreira sólida</span> e{" "}
                 <span className="text-primary text-nowrap">bem-sucedida</span>.{" "}
               </h1>
-              <p className="text-base text-muted-foreground leading-5 lg:leading-snug animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-200">
+              <p className="lg:text-lg text-muted-foreground leading-5 lg:leading-snug animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-200 max-w-2xl">
                 Saiba como advogados estão captando clientes, precificando
                 honorários e crescendo na área criminal.
               </p>
