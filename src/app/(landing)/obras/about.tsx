@@ -14,7 +14,7 @@ export function AboutPage() {
   });
 
   return (
-    <section className="bg-white">
+    <section className="bg-white" id="about">
       <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-16 w-full max-w-7xl lg:border-x-2 border-amber-800/20 p-6 py-16 mx-auto">
         {/* Imagem desktop com fade + slide from left */}
         <div

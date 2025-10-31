@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { CreditCard, Lock } from "lucide-react";
 import { CTAButton } from "./cta-button";
+import { FaWhatsapp } from "react-icons/fa";
 
 export function CTASection() {
   return (
@@ -24,7 +25,9 @@ export function CTASection() {
             construa a carreira que você merece.
           </p>
 
-          <CTAButton>QUERO COMEÇAR AGORA</CTAButton>
+          <CTAButton href="https://wa.me/5518998245031">
+            <FaWhatsapp /> FALE COMIGO NO WHATSAPP
+          </CTAButton>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <Card className="p-4 flex flex-row gap-2 bg-transparent border-2 border-amber-200/20">

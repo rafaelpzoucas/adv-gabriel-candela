@@ -146,7 +146,12 @@ export function CourseModulesSection() {
               : "opacity-0 translate-y-8"
           )}
         >
-          <CTAButton className="w-full">QUERO TER ACESSO</CTAButton>
+          <CTAButton
+            href="https://hotmart.com/pt-br/marketplace/produtos/criminalreal/R100538677M"
+            className="w-full"
+          >
+            QUERO TER ACESSO
+          </CTAButton>
         </div>
       </div>
     </section>

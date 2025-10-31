@@ -159,8 +159,12 @@ export function SocialProofSection() {
               : "opacity-0 translate-y-8"
           )}
         >
-          <CTAButton>QUERO GARANTIR MEU EXEMPLAR AGORA</CTAButton>
-          <CTAButton>PREFIRO EBOOK</CTAButton>
+          <CTAButton href="https://loja.uiclap.com/titulo/ua97619/?srsltid=AfmBOooDRfnL0rtO6kvEAF3jv1zg5Qm0wt3ZViIN_-b8kvvFW94I_3uE">
+            QUERO GARANTIR MEU EXEMPLAR AGORA
+          </CTAButton>
+          <CTAButton href="https://www.amazon.com.br/Manual-Pr%C3%A1tica-Penal-Planejamento-Senten%C3%A7a-ebook/dp/B0F9XR3X8H">
+            PREFIRO EBOOK
+          </CTAButton>
         </div>
       </div>
     </section>

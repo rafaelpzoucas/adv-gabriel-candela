@@ -40,7 +40,7 @@ export function HeroSection() {
                     priority
                   />
                 </div>
-                <CTAButton />
+                <CTAButton href="#about" />
               </div>
 
               <span className="flex flex-row gap-2 items-start text-sm sm:text-base bg-gradient-to-t from-black lg:bg-none px-6 pb-4 lg:p-0 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-500">
